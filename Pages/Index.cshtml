@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@inject CarsDbContext _context
+<table class="table table-bordered">
+    <thead class="bg bg-success">
+    <td>Name</td>
+    <td>ModelNumber</td>
+    <td>ManufactureYear</td>
+    <td>Manufacturer</td>
+    <td>Rating</td>
+    </thead>
+    @foreach (var item in _context.Cars)
+    {
+
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.ModelNumber</td>
+            <td>@item.ManufactureYear</td>
+            <td>@item.Manufacturer</td>
+            <td>@item.Rating</td>
+        </tr>
+    }
+</table>
